@@ -190,17 +190,8 @@
         <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
       </filter>
     </defs>
+    <g transform="translate(720, 240)"><circle cx="0" cy="0" r="110" fill="url(#sunStripes)" /></g>
     
-    <g transform="translate(720, 240)">
-      <circle cx="0" cy="0" r="110" fill="url(#sunStripes)" />
-    </g>
-
-    <!-- Vaporwave Birds -->
-    <g stroke="var(--sun-fill)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#neonGlow)">
-      <path d="M 850,180 Q 865,160 880,180 Q 895,160 910,180" />
-      <path d="M 900,240 Q 910,225 920,240 Q 930,225 940,240" />
-    </g>
-
     <!-- Background Mountains -->
     <polygon points="120,600 380,340 580,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5" />
     <polygon points="240,600 380,340 460,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1" />
@@ -214,19 +205,25 @@
     <polygon points="860,600 1060,360 1320,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5" />
     <polygon points="980,600 1060,360 1180,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1" />
     <line x1="1060" y1="360" x2="1060" y2="600" stroke="var(--mountain-wire)" stroke-width="1" />
-
-    <!-- Glowing Pink Sun Reflection -->
-    <g stroke="var(--sun-fill)" stroke-width="5" stroke-linecap="round" fill="none" filter="url(#neonGlow)" opacity="0.7">
-      <line x1="650" y1="670" x2="790" y2="670" />
-      <line x1="680" y1="700" x2="760" y2="700" />
-      <line x1="630" y1="730" x2="810" y2="730" />
-      <line x1="690" y1="760" x2="750" y2="760" />
-      <line x1="660" y1="790" x2="780" y2="790" />
-      <line x1="700" y1="820" x2="740" y2="820" />
-      <line x1="670" y1="850" x2="770" y2="850" />
-      <line x1="710" y1="880" x2="730" y2="880" />
-      <line x1="680" y1="910" x2="760" y2="910" />
-      <line x1="715" y1="940" x2="725" y2="940" />
+    
+    <!-- Expanded Glowing Pink Sun Reflection -->
+    <g stroke="var(--trail-pulse)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#neonGlow)" opacity="0.95">
+      <line x1="600" y1="670" x2="840" y2="670" />
+      <line x1="640" y1="690" x2="800" y2="690" />
+      <line x1="580" y1="710" x2="860" y2="710" />
+      <line x1="660" y1="730" x2="780" y2="730" />
+      <line x1="610" y1="750" x2="830" y2="750" />
+      <line x1="670" y1="770" x2="770" y2="770" />
+      <line x1="620" y1="790" x2="820" y2="790" />
+      <line x1="680" y1="810" x2="760" y2="810" />
+      <line x1="630" y1="830" x2="810" y2="830" />
+      <line x1="690" y1="850" x2="750" y2="850" />
+      <line x1="640" y1="870" x2="800" y2="870" />
+      <line x1="700" y1="890" x2="740" y2="890" />
+      <line x1="650" y1="910" x2="790" y2="910" />
+      <line x1="705" y1="930" x2="735" y2="930" />
+      <line x1="660" y1="950" x2="780" y2="950" />
+      <line x1="710" y1="970" x2="730" y2="970" />
     </g>
 
     <path d="M -50,750 Q 320,680 720,700 T 1500,740" fill="none" stroke="var(--topo-line)" stroke-width="1.5" />
@@ -267,7 +264,7 @@
     </div>
     <div class="actions">
       <button id="langToggle" aria-label="Toggle Language" class="brand-text-match">JP</button>
-      <button id="themeToggle" aria-label="Toggle Night Mode">☀️</button>
+      <button id="themeToggle" aria-label="Toggle Night Mode">☀️️</button>
       <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=ofgLKZH0XUSjiJkkEQ3NGNcGX0Z8wTRLl46YD-WfRO9UQVlXSFVDV0haR1NSRllZVEsxU0RaRE5GQy4u" target="_blank"><span class="en">Register</span><span class="ja">登録する</span></a>
     </div>
     <button id="menuBtn" class="hamburger"><span></span><span></span><span></span></button>
@@ -311,6 +308,7 @@
       <a href="#event" class="btn"><span class="en">Get Details</span><span class="ja">詳細を見る</span></a>
     </div>
   </div>
+  <!-- Splash Intro Screen Mountains (Tall, narrow, leaning outwards, highly symmetrical) -->
   <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: -2px; left: 0; pointer-events: none; z-index: 3;">
     <g>
       <polygon points="-20,400 90,-600 240,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
