@@ -62,7 +62,7 @@
     .waypoint-ping { animation: pingGlow 2s ease-in-out infinite alternate; }
     @keyframes pingGlow { from { r: 5px; opacity: 0.6; } to { r: 10px; opacity: 1; } }
 
-    /* Localized Hero and Footer Mountains */
+    /* Symmetrical Mountains locked to Hero and Footer */
     .hero-mountains, .footer-mountains {
       width: 100%; height: 25vh; pointer-events: none; overflow: visible; display: block;
     }
@@ -240,7 +240,7 @@
     <div class="actions">
       <button id="langToggle" aria-label="Toggle Language" class="brand-text-match">JP</button>
       <button id="themeToggle" aria-label="Toggle Night Mode">☀️</button>
-      <a class="btn" href="https://forms.office.com/r/hmpPU0rHR3" target="_blank"><span class="en">Register</span><span class="ja">登録する</span></a>
+      <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=ofgLKZH0XUSjiJkkEQ3NGNcGX0Z8wTRLl46YD-WfRO9UQVlXSFVDV0haR1NSRllZVEsxU0RaRE5GQy4u" target="_blank"><span class="en">Register</span><span class="ja">登録する</span></a>
     </div>
     <button id="menuBtn" class="hamburger"><span></span><span></span><span></span></button>
   </div>
@@ -253,7 +253,7 @@
       <button id="langToggleMobile" class="brand-text-match" style="flex: 1; text-align: center;">JP</button>
       <button id="themeToggleMobile" class="btn-outline" style="padding: 0.8rem; border-radius: 8px; font-size: 1.2rem; flex: 1;">☀️</button>
     </div>
-    <a class="btnWide" href="https://forms.office.com/r/hmpPU0rHR3" target="_blank"><span class="en">Register</span><span class="ja">登録する</span></a>
+    <a class="btnWide" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=ofgLKZH0XUSjiJkkEQ3NGNcGX0Z8wTRLl46YD-WfRO9UQVlXSFVDV0haR1NSRllZVEsxU0RaRE5GQy4u" target="_blank"><span class="en">Register</span><span class="ja">登録する</span></a>
   </div>
 </nav>
 
@@ -283,15 +283,17 @@
       <a href="#event" class="btn"><span class="en">Get Details</span><span class="ja">詳細を見る</span></a>
     </div>
   </div>
-  <!-- Splash Intro Screen Mountains (70 percent sharper peaks) -->
-  <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: 0; left: 0; pointer-events: none; z-index: 3;">
+  <!-- Splash Intro Screen Mountains (Perfectly Symmetrical & Sharp) -->
+  <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: -2px; left: 0; pointer-events: none; z-index: 3;">
     <g>
-      <polygon points="50,400 250,-260 320,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <line x1="250" y1="-260" x2="250" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="-50,400 250,-100 550,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="100,400 250,-100 250,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="250" y1="-100" x2="250" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
     <g>
-      <polygon points="1130,400 1200,-230 1270,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <line x1="1200" y1="-230" x2="1200" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="890,400 1190,-100 1490,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="1190,400 1190,-100 1340,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="1190" y1="-100" x2="1190" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
   </svg>
 </header>
@@ -320,7 +322,7 @@
       <ul>
         <li><span class="en"><strong>Meeting Time:</strong> 10:00 AM</span><span class="ja"><strong>集合時間:</strong> 午前10:00</span></li>
         <li><span class="en"><strong>Start Time:</strong> 10:30 AM</span><span class="ja"><strong>出発時間:</strong> 午前10:30</span></li>
-        <li><span class="en"><strong>Location:</strong> Hanno Station</span><span class="ja"><strong>集合場所:</strong> 飯能駅</span></li>
+        <li><span class="en"><strong>Meeting Point:</strong> Hanno Station (North Exit), near Yoshinoya (吉野家 飯能駅前店)</span><span class="ja"><strong>集合場所:</strong> 飯能駅 (北口)、吉野家 飯能駅前店 付近</span></li>
         <li><span class="en"><strong>Fee:</strong> 3,000 JPY (Includes T-shirt, Kids are free)</span><span class="ja"><strong>参加費:</strong> 3,000円 (Tシャツ込み、子供は無料)</span></li>
       </ul>
       <p class="subtle" style="font-size: 0.85rem;"><span class="en">Note: Surfaces can be slippery after rain. Wear grip shoes and bring water. Transport costs are self-covered.</span><span class="ja">注記: 雨上がりは路面が滑りやすくなります。グリップ力のある靴を履き、水を持参してください。交通費は自己負担となります。</span></p>
@@ -382,7 +384,7 @@
         <img src="SampleTShirt.png" alt="T-Shirt Preview">
         <p><span class="en">Grab the official Trek T-Shirt. All profit goes to our charity partners.</span><span class="ja">公式トレックTシャツを手に入れましょう。利益はすべてチャリティーパートナーへ寄付されます。</span></p>
       </div>
-      <a class="btn btnWide btn-outline" style="margin-top: 1.5rem;" href="https://buy.stripe.com/4gM28jfDDdnU6ro8WcbbG04" target="_blank"><span class="en">Visit Goods Shop</span><span class="ja">グッズショップを見る</span></a>
+      <a class="btn btnWide btn-outline" style="margin-top: 1.5rem;" href="https://buy.stripe.com/28E4grajj6Zw6rogoEbbG06" target="_blank"><span class="en">Visit Goods Shop</span><span class="ja">グッズショップを見る</span></a>
     </div>
   </div>
 </section>
@@ -404,12 +406,14 @@
 <div style="position: relative; width: 100%; height: 0; pointer-events: none; z-index: 3;">
   <svg class="footer-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: 0; left: 0; width: 100vw; height: 25vh;">
     <g>
-      <polygon points="50,400 250,-260 320,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <line x1="250" y1="-260" x2="250" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="-50,400 250,-100 550,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="100,400 250,-100 250,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="250" y1="-100" x2="250" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
     <g>
-      <polygon points="1130,400 1200,-230 1270,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <line x1="1200" y1="-230" x2="1200" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="890,400 1190,-100 1490,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="1190,400 1190,-100 1340,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="1190" y1="-100" x2="1190" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
   </svg>
 </div>
@@ -444,7 +448,7 @@
       if(themeToggleMob) themeToggleMob.innerHTML = '🌙';
     } else {
       document.documentElement.setAttribute('data-theme', 'vaporwave');
-      if(themeToggle) themeToggle.textContent = '☀️';
+      if(themeToggle) themeToggle.textContent = '☀️️';
       if(themeToggleMob) themeToggleMob.innerHTML = '☀️';
     }
   }
