@@ -208,17 +208,17 @@
     <polygon points="980,600 1060,360 1180,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1" />
     <line x1="1060" y1="360" x2="1060" y2="600" stroke="var(--mountain-wire)" stroke-width="1" />
     
-    <!-- Tapered Wireframe Sun Reflection -->
+    <!-- Tapered Wireframe Sun Reflection - Perfectly Symmetrical Path Math -->
     <g stroke="var(--trail-pulse)" stroke-width="3" stroke-linecap="round" fill="none" filter="url(#neonGlow)" opacity="0.55">
-      <line x1="560" y1="660" x2="880" y2="660" stroke-dasharray="40 15 70 15 40 15 70 15 40" />
-      <line x1="585" y1="675" x2="855" y2="675" stroke-dasharray="30 20 60 20 30 20 60 20 30" />
-      <line x1="610" y1="695" x2="830" y2="695" stroke-dasharray="20 25 50 25 20 25 50 25 20" />
-      <line x1="635" y1="720" x2="805" y2="720" stroke-dasharray="15 30 30 30 15 30 30 30 15" />
-      <line x1="660" y1="750" x2="780" y2="750" stroke-dasharray="25 25 40 25 25" />
-      <line x1="680" y1="785" x2="760" y2="785" stroke-dasharray="20 30 30 30 20" />
-      <line x1="695" y1="825" x2="745" y2="825" stroke-dasharray="15 15 15" />
-      <line x1="705" y1="870" x2="735" y2="870" stroke-dasharray="10 10 10" />
-      <line x1="715" y1="920" x2="725" y2="920" />
+      <path d="M 680,660 H 760 M 620,660 H 660 M 780,660 H 820 M 560,660 H 590 M 850,660 H 880" />
+      <path d="M 685,675 H 755 M 635,675 H 665 M 775,675 H 805 M 585,675 H 610 M 830,675 H 855" />
+      <path d="M 690,695 H 750 M 650,695 H 675 M 765,695 H 790 M 610,695 H 630 M 810,695 H 830" />
+      <path d="M 695,720 H 745 M 665,720 H 685 M 755,720 H 775 M 635,720 H 650 M 790,720 H 805" />
+      <path d="M 700,750 H 740 M 680,750 H 690 M 750,750 H 760 M 660,750 H 670 M 770,750 H 780" />
+      <path d="M 705,785 H 735 M 680,785 H 695 M 745,785 H 760" />
+      <path d="M 710,825 H 730 M 695,825 H 705 M 735,825 H 745" />
+      <path d="M 715,870 H 725 M 705,870 H 710 M 730,870 H 735" />
+      <path d="M 718,920 H 722" />
     </g>
 
     <path d="M -50,750 Q 320,680 720,700 T 1500,740" fill="none" stroke="var(--topo-line)" stroke-width="1.5" />
@@ -468,7 +468,7 @@
       if(themeToggleMob) themeToggleMob.innerHTML = '🌙';
     } else {
       document.documentElement.setAttribute('data-theme', 'vaporwave');
-      if(themeToggle) themeToggle.textContent = '☀';
+      if(themeToggle) themeToggle.textContent = '☀️️';
       if(themeToggleMob) themeToggleMob.innerHTML = '☀️';
     }
   }
