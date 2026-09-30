@@ -40,10 +40,12 @@
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); color: var(--ink); background-color: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; transition: background-color 0.5s ease, color 0.5s ease; overflow-x: hidden; position: relative; }
     
+    /* Subtle pink glow on main text in dark mode */
     [data-theme="vaporwave"] body, [data-theme="vaporwave"] p, [data-theme="vaporwave"] li, [data-theme="vaporwave"] span {
       text-shadow: 0 0 4px rgba(255, 113, 206, 0.25);
     }
 
+    /* Soft black drop shadow for mission text and prep intro in night mode */
     [data-theme="vaporwave"] .mission-text p,
     [data-theme="vaporwave"] #guide .subtle {
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
@@ -170,7 +172,6 @@
     .cardStaff { flex: 0 0 auto; text-align: center; scroll-snap-align: center; width: 85px; }
     .cardStaff img { width: 75px; height: 75px; border-radius: 50%; object-fit: cover; margin: 0 auto 0.8rem; box-shadow: var(--shadow); border: 2px solid var(--primary); }
     .cardStaff .name { font-weight: 800; color: var(--primary); font-family: var(--font-heading); font-size: 1rem; line-height: 1.2; }
-    .cardStaff .chip { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
 
     footer { position: relative; z-index: 2; background: var(--card-bg); color: var(--primary); text-align: center; padding: 2rem; font-size: 0.9rem; border-top: 1px solid var(--border); font-family: var(--font-heading); font-weight: 800; letter-spacing: 0.1em; }
   </style>
@@ -393,12 +394,12 @@
 <section id="staff" class="section shell">
   <h2 class="headline" style="text-align: center;"><span class="en">Trek Committee</span><span class="ja">トレック実行委員会</span></h2>
   <div class="staffGrid">
-    <div class="cardStaff"><img src="Waing.jpg" alt="Waing"><div class="name">Waing</div><div class="chip"><span class="en">Strategy</span><span class="ja">戦略</span></div></div>
-    <div class="cardStaff"><img src="Nana.jpg" alt="Nana"><div class="name">Nana</div><div class="chip"><span class="en">Architect</span><span class="ja">設計</span></div></div>
-    <div class="cardStaff"><img src="Peiyu.jpg" alt="Peiyu"><div class="name">Peiyu</div><div class="chip"><span class="en">Inspiration</span><span class="ja">インスピレーション</span></div></div>
-    <div class="cardStaff"><img src="Yujiro.jpg" alt="Yujiro"><div class="name">Yujiro</div><div class="chip"><span class="en">Logistics</span><span class="ja">ロジスティクス</span></div></div>
-    <div class="cardStaff"><img src="Shin-photo-1.jpg" alt="Shin"><div class="name">Shin</div><div class="chip"><span class="en">Guru</span><span class="ja">グル</span></div></div>
-    <div class="cardStaff"><img src="john.jpg" alt="John"><div class="name">John</div><div class="chip"><span class="en">Trailblazer</span><span class="ja">トレイルブレイザー</span></div></div>
+    <div class="cardStaff"><img src="Waing.jpg" alt="Waing"><div class="name">Waing</div></div>
+    <div class="cardStaff"><img src="Nana.jpg" alt="Nana"><div class="name">Nana</div></div>
+    <div class="cardStaff"><img src="Peiyu.jpg" alt="Peiyu"><div class="name">Peiyu</div></div>
+    <div class="cardStaff"><img src="Yujiro.jpg" alt="Yujiro"><div class="name">Yujiro</div></div>
+    <div class="cardStaff"><img src="Shin-photo-1.jpg" alt="Shin"><div class="name">Shin</div></div>
+    <div class="cardStaff"><img src="john.jpg" alt="John"><div class="name">John</div></div>
   </div>
 </section>
 
@@ -519,7 +520,7 @@
         if(entry.target.id !== activeSection && sectionHints[entry.target.id]) {
            activeSection = entry.target.id;
            hintIndex = 0; 
-           if (!window.isClimbing && !window.isPreparingClimb) {
+           if (!window.isClimbing && !window.isPreparingClimb && !window.isHovered) {
              const speechEl = document.getElementById('turtleSpeech');
              if(speechEl) { speechEl.innerHTML = sectionHints[activeSection][0]; speechEl.classList.add('show'); }
            }
