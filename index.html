@@ -40,16 +40,8 @@
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); color: var(--ink); background-color: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; transition: background-color 0.5s ease, color 0.5s ease; overflow-x: hidden; position: relative; }
     
-    /* Subtle pink glow on main text in dark mode */
-    [data-theme="vaporwave"] body, [data-theme="vaporwave"] p, [data-theme="vaporwave"] li, [data-theme="vaporwave"] span {
-      text-shadow: 0 0 4px rgba(255, 113, 206, 0.25);
-    }
-
-    /* Soft black drop shadow for mission text and prep intro in night mode */
-    [data-theme="vaporwave"] .mission-text p,
-    [data-theme="vaporwave"] #guide .subtle {
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-    }
+    [data-theme="vaporwave"] body, [data-theme="vaporwave"] p, [data-theme="vaporwave"] li, [data-theme="vaporwave"] span { text-shadow: 0 0 4px rgba(255, 113, 206, 0.25); }
+    [data-theme="vaporwave"] .mission-text p, [data-theme="vaporwave"] #guide .subtle { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); }
 
     h1, h2, h3, .serif { font-family: var(--font-heading); transition: color 0.3s ease; }
     [data-theme="vaporwave"] h1, [data-theme="vaporwave"] h2, [data-theme="vaporwave"] .headline { text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; text-shadow: 2px 2px 0px rgba(1, 205, 254, 0.6), -2px -2px 0px rgba(185, 103, 255, 0.6); }
@@ -64,14 +56,8 @@
     .waypoint-ping { animation: pingGlow 2s ease-in-out infinite alternate; }
     @keyframes pingGlow { from { r: 5px; opacity: 0.6; } to { r: 10px; opacity: 1; } }
 
-    /* Symmetrical Mountains locked to Hero and Footer */
-    .hero-mountains, .footer-mountains {
-      width: 100%; height: 25vh; pointer-events: none; overflow: visible; display: block;
-    }
-    [data-theme="vaporwave"] .hero-mountains polygon,
-    [data-theme="vaporwave"] .footer-mountains polygon {
-      filter: drop-shadow(0 0 10px rgba(1, 205, 254, 0.2));
-    }
+    .hero-mountains, .footer-mountains { width: 100%; height: 25vh; pointer-events: none; overflow: visible; display: block; }
+    [data-theme="vaporwave"] .hero-mountains polygon, [data-theme="vaporwave"] .footer-mountains polygon { filter: drop-shadow(0 0 10px rgba(1, 205, 254, 0.2)); }
 
     .turtle-wrapper { position: fixed; width: 90px; z-index: 4; pointer-events: none; top: -200px; left: -200px; transform: translate(-50%, -50%); }
     .turtle-img { width: 100%; height: auto; cursor: pointer; pointer-events: auto; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4)); transition: filter 0.5s ease; }
@@ -140,6 +126,27 @@
     [data-theme="vaporwave"] .guide-icon { filter: drop-shadow(0 0 12px var(--accent)); }
     .guide-text p { margin: 0; line-height: 1.5; }
 
+    /* Route Visualization */
+    .route-viz { display: flex; align-items: flex-start; justify-content: space-between; position: relative; margin: 2.5rem 0; padding: 0 2%; }
+    .route-line { position: absolute; top: 10px; left: 10%; width: 80%; height: 4px; background: var(--accent); opacity: 0.5; z-index: 1; border-radius: 2px; }
+    [data-theme="vaporwave"] .route-line { box-shadow: 0 0 10px var(--accent); }
+    .route-node { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; position: relative; z-index: 2; cursor: pointer; transition: transform 0.3s; flex: 1; }
+    .route-node:hover { transform: translateY(-5px) scale(1.05); }
+    .node-circle { width: 24px; height: 24px; background: var(--bg); border: 4px solid var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); transition: all 0.3s; }
+    [data-theme="vaporwave"] .node-circle { box-shadow: 0 0 15px var(--accent), inset 0 0 10px var(--accent); }
+    .route-node:hover .node-circle { background: var(--accent); transform: scale(1.2); }
+    .node-label { font-size: 0.75rem; font-weight: 800; text-align: center; color: var(--primary); text-transform: uppercase; line-height: 1.3; }
+    [data-theme="vaporwave"] .node-label { color: var(--ink); text-shadow: 0 0 4px var(--accent); }
+
+    /* Countdown Timer */
+    .countdown-container { display: flex; gap: clamp(0.5rem, 2vw, 1.5rem); margin-bottom: 2.5rem; justify-content: center; z-index: 10; }
+    .cd-box { display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.5); padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(8px); min-width: 75px; }
+    [data-theme="vaporwave"] .cd-box { background: rgba(13,14,24,0.65); border-color: var(--accent); box-shadow: 0 0 15px rgba(1, 205, 254, 0.3), inset 0 0 10px rgba(1, 205, 254, 0.2); }
+    .cd-num { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; line-height: 1; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    [data-theme="vaporwave"] .cd-num { color: var(--accent); text-shadow: 0 0 15px var(--accent); }
+    .cd-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; color: rgba(255,255,255,0.8); margin-top: 5px; }
+    [data-theme="vaporwave"] .cd-label { color: var(--primary); text-shadow: 0 0 8px var(--primary); }
+
     .btn, .btnWide, .btn-outline { font-style: italic; }
     .btn, .btnWide { background: var(--accent); color: #fff; border: 2px solid transparent; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; display: inline-block; transition: all 0.3s ease; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
     [data-theme="vaporwave"] .btn, [data-theme="vaporwave"] .btnWide { color: #000; }
@@ -178,7 +185,6 @@
     .heroOverlay { position: absolute; inset: 0; background: rgba(0,0,0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; z-index: 5; padding: 1rem; color: #fff; }
     [data-theme="vaporwave"] .heroOverlay { background: linear-gradient(180deg, rgba(11, 12, 16, 0.4) 0%, rgba(255, 113, 206, 0.2) 100%); }
     
-    /* Centralized Hero Text Constraints */
     .heroOverlay h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; text-shadow: 0 4px 12px rgba(0,0,0,0.5); max-width: 900px; padding: 0 8vw; line-height: 1.2; }
     .heroOverlay p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; padding: 0 1rem; }
 
@@ -198,7 +204,6 @@
     @media (min-width: 900px) { .giveGrid { grid-template-columns: 1fr 1fr; } }
     .giveCard { display: flex; flex-direction: column; justify-content: space-between; }
     
-    /* Interactive T-Shirt Preview */
     .giveCard a img { border-radius: 8px; margin-bottom: 1.5rem; max-height: 280px; width: 100%; object-fit: contain; background: var(--bg); padding: 1rem; border: 1px solid var(--border); transition: all 0.3s ease; }
     .giveCard a:hover img { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(42, 75, 60, 0.15); border-color: var(--accent); }
     [data-theme="vaporwave"] .giveCard a:hover img { box-shadow: 0 0 20px rgba(1, 205, 254, 0.4); border-color: var(--accent); }
@@ -333,6 +338,15 @@
     <div class="heroOverlay">
       <h1 id="heroTitle"><span class="en">Walk With Purpose</span><span class="ja">目的と共に歩む</span></h1>
       <p id="heroSub"><span class="en">TransPerfect Japan Charity Trek</span><span class="ja">トランスパーフェクト・ジャパン チャリティートレック</span></p>
+      
+      <!-- Dynamic Countdown Timer -->
+      <div id="countdown" class="countdown-container">
+        <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label">DAYS</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label">HRS</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdMins">00</span><span class="cd-label">MIN</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">SEC</span></div>
+      </div>
+
       <a href="#event" class="btn"><span class="en">Get Details</span><span class="ja">詳細を見る</span></a>
     </div>
   </div>
@@ -367,11 +381,10 @@
 <section id="event" class="section shell card">
   <span class="badge"><span class="en">Logistics</span><span class="ja">イベント詳細</span></span>
   <h2 class="headline"><span class="en">Tenran-Tonosu Mountain Trail</span><span class="ja">天覧山〜多峯主山ハイキングコース</span></h2>
-  <p class="subtle"><span class="en">Saturday, November 7th</span><span class="ja">11月7日 土曜日</span></p>
-  <div class="eventGrid">
+  <div class="eventGrid" style="margin-top: 1rem;">
     <div class="eventCol">
       <p><span class="en">A scenic climb linking Mount Tenran and Mount Tonosu. The path offers switchback forest tracks, natural viewpoints over Hanno, and an accessible ascent suitable for beginners and experienced walkers alike.</span><span class="ja">天覧山と多峯主山を結ぶ絶景のコース。つづら折りの林道、飯能を見渡す自然の展望台があり、初心者から経験者まで楽しめる登りやすいルートです。</span></p>
-      <br><h3><span class="en">Schedule</span><span class="ja">スケジュール</span></h3>
+      <br><h3><span class="en">Schedule - Saturday, November 7th</span><span class="ja">スケジュール - 11月7日(土)</span></h3>
       <ul class="standard-list">
         <li><span class="en"><strong>Meeting Time:</strong> 10:00 AM</span><span class="ja"><strong>集合時間:</strong> 午前10:00</span></li>
         <li><span class="en"><strong>Start Time:</strong> 10:30 AM</span><span class="ja"><strong>出発時間:</strong> 午前10:30</span></li>
@@ -397,7 +410,8 @@
 <section id="guide" class="section shell">
   <h2 class="headline" style="text-align: center;"><span class="en">How to Trek</span><span class="ja">トレックの心得</span></h2>
   <div style="text-align: center; margin-bottom: 3rem;"><p class="subtle text-glow"><span class="en">Preparation and gear for the ascent.</span><span class="ja">登山の準備と装備。</span></p></div>
-  <div class="card">
+  
+  <div class="card" style="margin-bottom: 2.5rem;">
     <div class="neon-compass"><div class="neon-compass-needle"></div></div>
     <span class="badge"><span class="en">Survival Guide</span><span class="ja">サバイバルガイド</span></span>
     <p class="subtle" style="margin-bottom: 2rem; max-width: 80%;"><span class="en">Proper gear and hydration for the ascent.</span><span class="ja">登山のための適切な装備と水分補給。</span></p>
@@ -442,6 +456,85 @@
             <div class="guide-icon">📱</div>
             <div class="guide-text">
               <p><span class="en"><strong>Navigation:</strong> Download trail maps offline. Cell service can drop in the mountains.</span><span class="ja"><strong>ナビゲーション:</strong> オフラインで地図を保存しましょう。山奥では電波が途切れることがあります。</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trail Highlights Card -->
+  <div class="card">
+    <span class="badge"><span class="en">The Experience</span><span class="ja">体験</span></span>
+    <h3 class="headline" style="font-size: 1.5rem; margin-bottom: 0.5rem;"><span class="en">Trail Highlights</span><span class="ja">コースの見どころ</span></h3>
+    
+    <div class="route-viz">
+      <div class="route-line"></div>
+      <div class="route-node turtle-hover-target" data-hover-en="Meeting point! Let's go!" data-hover-ja="集合場所！出発進行！">
+        <div class="node-circle"></div>
+        <div class="node-label"><span class="en">Hanno<br>Station</span><span class="ja">飯能駅</span></div>
+      </div>
+      <div class="route-node turtle-hover-target" data-hover-en="Easy climb, great views!" data-hover-ja="登りやすくて絶景！">
+        <div class="node-circle"></div>
+        <div class="node-label"><span class="en">Mt.<br>Tenran</span><span class="ja">天覧山</span></div>
+      </div>
+      <div class="route-node turtle-hover-target" data-hover-en="The summit! Almost there!" data-hover-ja="山頂！あともう少し！">
+        <div class="node-circle"></div>
+        <div class="node-label"><span class="en">Mt.<br>Tonosu</span><span class="ja">多峯主山</span></div>
+      </div>
+      <div class="route-node turtle-hover-target" data-hover-en="Great job! Time to celebrate!" data-hover-ja="お疲れ様！打ち上げだ！">
+        <div class="node-circle"></div>
+        <div class="node-label"><span class="en">Finish<br>&nbsp;</span><span class="ja">ゴール</span></div>
+      </div>
+    </div>
+
+    <div class="eventGrid" style="margin-top: 2.5rem;">
+      <div class="eventCol">
+        <div class="guide-list">
+          <div class="guide-item">
+            <div class="guide-icon">🌲</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Scenic mountain trail:</strong> Enjoy nature.</span><span class="ja"><strong>絶景の山道:</strong> 自然を満喫。</span></p>
+            </div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon">👟</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Beginner-friendly hiking:</strong> Safe for all levels.</span><span class="ja"><strong>初心者向けハイキング:</strong> 誰でも安全に楽しめます。</span></p>
+            </div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon">🤝</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Meet colleagues:</strong> From across Japan.</span><span class="ja"><strong>同僚との交流:</strong> 日本全国のメンバーと。</span></p>
+            </div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon">👕</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Exclusive Trek T-shirt:</strong> Custom designed.</span><span class="ja"><strong>限定Tシャツ:</strong> オリジナルデザイン。</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="eventCol">
+        <div class="guide-list">
+          <div class="guide-item">
+            <div class="guide-icon">❤️</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Support education:</strong> Help kids in need.</span><span class="ja"><strong>教育支援:</strong> 子供たちをサポート。</span></p>
+            </div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon">📸</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Photo opportunities:</strong> Capture the memories.</span><span class="ja"><strong>写真撮影:</strong> 思い出を残そう。</span></p>
+            </div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon">🍱</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Post-hike gathering:</strong> Celebrate together.</span><span class="ja"><strong>打ち上げ:</strong> みんなで乾杯。</span></p>
             </div>
           </div>
         </div>
@@ -593,8 +686,20 @@
       document.getElementById('wxDescDisplay').innerHTML = `<span class="en">Weather offline</span><span class="ja">天気情報オフライン</span>`;
     });
 
+  // Countdown Logic
+  const cdDate = new Date("November 7, 2026 10:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const dist = cdDate - now;
+    if (dist < 0) return;
+    document.getElementById('cdDays').textContent = String(Math.floor(dist / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    document.getElementById('cdHours').textContent = String(Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    document.getElementById('cdMins').textContent = String(Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    document.getElementById('cdSecs').textContent = String(Math.floor((dist % (1000 * 60)) / 1000)).padStart(2, '0');
+  }, 1000);
+
   const sectionHints = {
-    'hero': ["<span class='ja'>一緒に歩こう！</span><span class='en'>Let's walk together!</span>", "<span class='ja'>下へスクロール！</span><span class='en'>Scroll down!</span>"],
+    'hero': ["<span class='ja'>11月7日に参加しよう！</span><span class='en'>Join us November 7th!</span>"],
     'mission': ["<span class='ja'>小さな一歩が、大きな力に！</span><span class='en'>Small steps. Big impact!</span>", "<span class='ja'>教育を支援しよう！</span><span class='en'>Support education!</span>"],
     'event': ["<span class='ja'>飯能駅で会いましょう！</span><span class='en'>See you at Hanno Station!</span>", "<span class='ja'>11月7日をお忘れなく！</span><span class='en'>Don't forget Nov 7th!</span>"],
     'guide': ["<span class='ja'>日焼け止めを忘れずに！</span><span class='en'>Don't forget sunscreen!</span>", "<span class='ja'>水分補給が大切です！</span><span class='en'>Stay hydrated!</span>"],
@@ -652,6 +757,21 @@
     speechEl.addEventListener('mouseleave', (e) => {
       if (e.relatedTarget === turtleImg) return;
       endHover();
+    });
+
+    // Node Hover Logic
+    document.querySelectorAll('.turtle-hover-target').forEach(node => {
+      node.addEventListener('mouseenter', (e) => {
+        if (window.isClimbing || window.isPreparingClimb) return;
+        window.isHovered = true;
+        const textEn = node.getAttribute('data-hover-en');
+        const textJa = node.getAttribute('data-hover-ja');
+        speechEl.innerHTML = `<span class='ja'>${textJa}</span><span class='en'>${textEn}</span>`;
+        speechEl.classList.add('show');
+      });
+      node.addEventListener('mouseleave', () => {
+        endHover();
+      });
     });
 
     function endHover() {
