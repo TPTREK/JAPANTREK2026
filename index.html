@@ -189,7 +189,7 @@
     ul.standard-list li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
     ul.standard-list li::before { content: ">"; color: var(--accent); position: absolute; left: 0; font-size: 0.9rem; top: 1px; font-weight: 800; }
     
-    #meetMap { width: 100%; height: 300px; border-radius: var(--r); z-index: 1; border: 2px solid var(--border); }
+    #meetMap { width: 100%; height: 240px; border-radius: var(--r); z-index: 1; border: 2px solid var(--border); }
     [data-theme="vaporwave"] #meetMap { filter: invert(1) hue-rotate(180deg) contrast(1.2); }
     #weatherCard { background: var(--bg); border-radius: var(--r); padding: 1.5rem; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; border: 1px solid var(--border); }
     .wxTemp { font-size: 2.5rem; font-weight: 800; font-family: var(--font-heading); color: var(--primary); }
@@ -378,7 +378,6 @@
         <li><span class="en"><strong>Meeting Point:</strong> Hanno Station (North Exit), near Yoshinoya (吉野家 飯能駅前店)</span><span class="ja"><strong>集合場所:</strong> 飯能駅 (北口)、吉野家 飯能駅前店 付近</span></li>
         <li><span class="en"><strong>Fee:</strong> 3,000 JPY (Includes T-shirt, Kids are free)</span><span class="ja"><strong>参加費:</strong> 3,000円 (Tシャツ込み、子供は無料)</span></li>
       </ul>
-      <p class="subtle" style="font-size: 0.85rem;"><span class="en">Note: Surfaces can be slippery after rain. Wear grip shoes and bring water. Transport costs are self-covered.</span><span class="ja">注記: 雨上がりは路面が滑りやすくなります。グリップ力のある靴を履き、水を持参してください。交通費は自己負担となります。</span></p>
       <div id="weatherCard">
         <div class="wxTemp" id="wxTempDisplay">--°</div>
         <div class="wxDetails">
@@ -774,12 +773,7 @@
       } catch(e) {}
     }
     if (isBack) {
-      document.body.classList.remove('cinema-mode');
-      const wrap = document.getElementById('turtleMascot');
-      const speech = document.getElementById('turtleSpeech');
-      if(wrap) { wrap.style.opacity = '1'; wrap.style.transition = 'none'; }
-      if(speech) speech.classList.remove('show');
-      window.isClimbing = false; window.isPreparingClimb = false; window.isHovered = false;
+      window.location.replace("https://tptrek.github.io/JAPANTREK2026/");
     }
   });
 </script>
