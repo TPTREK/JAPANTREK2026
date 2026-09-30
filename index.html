@@ -197,7 +197,11 @@
     .giveGrid { display: grid; gap: 2rem; }
     @media (min-width: 900px) { .giveGrid { grid-template-columns: 1fr 1fr; } }
     .giveCard { display: flex; flex-direction: column; justify-content: space-between; }
-    .giveCard img { border-radius: 8px; margin-bottom: 1.5rem; max-height: 200px; object-fit: contain; background: var(--bg); padding: 1rem; border: 1px solid var(--border); }
+    
+    /* Interactive T-Shirt Preview */
+    .giveCard a img { border-radius: 8px; margin-bottom: 1.5rem; max-height: 280px; width: 100%; object-fit: contain; background: var(--bg); padding: 1rem; border: 1px solid var(--border); transition: all 0.3s ease; }
+    .giveCard a:hover img { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(42, 75, 60, 0.15); border-color: var(--accent); }
+    [data-theme="vaporwave"] .giveCard a:hover img { box-shadow: 0 0 20px rgba(1, 205, 254, 0.4); border-color: var(--accent); }
 
     .staffGrid { display: flex; flex-wrap: nowrap; gap: 1.5rem; justify-content: flex-start; margin-top: 2rem; padding-bottom: 1.5rem; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
     @media (min-width: 800px) { .staffGrid { justify-content: center; overflow-x: visible; } }
@@ -454,7 +458,7 @@
       <div>
         <span class="badge"><span class="en">Donate</span><span class="ja">寄付</span></span>
         <h3 class="headline" style="font-size: 1.5rem;"><span class="en">Direct Contribution</span><span class="ja">直接寄付</span></h3>
-        <p style="margin-bottom: 1rem;"><span class="en">Working together as a company to support P.U.S. JAPAN embodies everything we value. Standing shoulder to shoulder to empower these kids is genuinely awesome, turning our shared momentum into real, lasting change for education.</span><span class="ja">P.U.S. JAPANを支援するための企業としての団結は、私たちが大切にするすべての価値観を体現しています。子供たちをエンパワーするために共に立ち上がることは本当に素晴らしく、私たちの歩みを教育のための本物の変化へと変えてくれます。</span></p>
+        <p style="margin-bottom: 1rem;"><span class="en">Partnering with P.U.S. JAPAN reflects our core values. Together, we are translating our shared effort into lasting educational opportunities for children.</span><span class="ja">P.U.S. JAPANとの提携は、私たちのコアバリューを反映しています。私たちは共に、この共通の取り組みを、子供たちのための永続的な教育の機会へと変えていきます。</span></p>
         <ul class="standard-list" style="margin-bottom: 0;">
           <li><span class="en"><strong>Infrastructure:</strong> Since 1985, they have funded and constructed 47 schools across Bangladesh, Nepal, and Myanmar.</span><span class="ja"><strong>学校建設:</strong> 1985年の設立以来、バングラデシュ、ネパール、ミャンマーに47校の学校を建設しています。</span></li>
           <li><span class="en"><strong>Sponsorship:</strong> A foster-parent style scholarship. For roughly 2,000 JPY per month, donors fund schooling, supplies, and uniforms for a rural child.</span><span class="ja"><strong>里親制度:</strong> 月額約2,000円で、農村部の子供1人の学費や学用品、制服代を支援する奨学金制度です。</span></li>
@@ -467,7 +471,9 @@
       <div>
         <span class="badge"><span class="en">Merch</span><span class="ja">グッズ</span></span>
         <h3 class="headline" style="font-size: 1.5rem;"><span class="en">Charity Goods</span><span class="ja">チャリティーグッズ</span></h3>
-        <img src="SampleTShirt.png" alt="T-Shirt Preview">
+        <a href="https://buy.stripe.com/28E4grajj6Zw6rogoEbbG06" target="_blank">
+          <img src="SampleTShirt.png" alt="T-Shirt Preview">
+        </a>
         <p><span class="en">Grab the official Trek T-Shirt. All profit goes to our charity partners.</span><span class="ja">公式トレックTシャツを手に入れましょう。利益はすべてチャリティーパートナーへ寄付されます。</span></p>
       </div>
       <a class="btn btnWide btn-outline" style="margin-top: 1.5rem;" href="https://buy.stripe.com/28E4grajj6Zw6rogoEbbG06" target="_blank"><span class="en">Visit Goods Shop</span><span class="ja">グッズショップを見る</span></a>
