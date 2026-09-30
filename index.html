@@ -190,7 +190,18 @@
         <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
       </filter>
     </defs>
-    <g transform="translate(720, 240)"><circle cx="0" cy="0" r="110" fill="url(#sunStripes)" /></g>
+    
+    <g transform="translate(720, 240)">
+      <circle cx="0" cy="0" r="110" fill="url(#sunStripes)" />
+    </g>
+
+    <!-- Vaporwave Birds -->
+    <g stroke="var(--sun-fill)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#neonGlow)">
+      <path d="M 850,180 Q 865,160 880,180 Q 895,160 910,180" />
+      <path d="M 900,240 Q 910,225 920,240 Q 930,225 940,240" />
+    </g>
+
+    <!-- Background Mountains -->
     <polygon points="120,600 380,340 580,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5" />
     <polygon points="240,600 380,340 460,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1" />
     <line x1="380" y1="340" x2="380" y2="600" stroke="var(--mountain-wire)" stroke-width="1" />
@@ -203,9 +214,25 @@
     <polygon points="860,600 1060,360 1320,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5" />
     <polygon points="980,600 1060,360 1180,600" fill="none" stroke="var(--mountain-wire)" stroke-width="1" />
     <line x1="1060" y1="360" x2="1060" y2="600" stroke="var(--mountain-wire)" stroke-width="1" />
+
+    <!-- Glowing Pink Sun Reflection -->
+    <g stroke="var(--sun-fill)" stroke-width="5" stroke-linecap="round" fill="none" filter="url(#neonGlow)" opacity="0.7">
+      <line x1="650" y1="670" x2="790" y2="670" />
+      <line x1="680" y1="700" x2="760" y2="700" />
+      <line x1="630" y1="730" x2="810" y2="730" />
+      <line x1="690" y1="760" x2="750" y2="760" />
+      <line x1="660" y1="790" x2="780" y2="790" />
+      <line x1="700" y1="820" x2="740" y2="820" />
+      <line x1="670" y1="850" x2="770" y2="850" />
+      <line x1="710" y1="880" x2="730" y2="880" />
+      <line x1="680" y1="910" x2="760" y2="910" />
+      <line x1="715" y1="940" x2="725" y2="940" />
+    </g>
+
     <path d="M -50,750 Q 320,680 720,700 T 1500,740" fill="none" stroke="var(--topo-line)" stroke-width="1.5" />
     <path d="M -50,830 Q 340,770 720,790 T 1500,820" fill="none" stroke="var(--topo-line)" stroke-width="1.5" />
     <path d="M -50,910 Q 360,860 720,870 T 1500,900" fill="none" stroke="var(--topo-line)" stroke-width="1.5" />
+    
     <path id="mountainTrail" d="M 720,990 C 690,920 620,890 580,840 C 530,780 620,740 680,700 C 760,650 860,620 830,540 C 800,470 650,470 660,390 C 670,330 710,290 720,240" fill="none" stroke="var(--trail-base)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
     <path d="M 720,990 C 690,920 620,890 580,840 C 530,780 620,740 680,700 C 760,650 860,620 830,540 C 800,470 650,470 660,390 C 670,330 710,290 720,240" fill="none" stroke="var(--trail-pulse)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)" class="trail-pulse" />
     <circle cx="720" cy="240" r="7" fill="var(--trail-pulse)" class="waypoint-ping" filter="url(#neonGlow)" />
@@ -284,7 +311,6 @@
       <a href="#event" class="btn"><span class="en">Get Details</span><span class="ja">詳細を見る</span></a>
     </div>
   </div>
-  <!-- Splash Intro Screen Mountains (Tall, narrow, leaning outwards, highly symmetrical) -->
   <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: -2px; left: 0; pointer-events: none; z-index: 3;">
     <g>
       <polygon points="-20,400 90,-600 240,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
@@ -520,7 +546,7 @@
         if(entry.target.id !== activeSection && sectionHints[entry.target.id]) {
            activeSection = entry.target.id;
            hintIndex = 0; 
-           if (!window.isClimbing && !window.isPreparingClimb) {
+           if (!window.isClimbing && !window.isPreparingClimb && !window.isHovered) {
              const speechEl = document.getElementById('turtleSpeech');
              if(speechEl) { speechEl.innerHTML = sectionHints[activeSection][0]; speechEl.classList.add('show'); }
            }
@@ -536,13 +562,42 @@
   const speechEl = document.getElementById('turtleSpeech');
   
   let currentScale = 1, targetScale = 1;
-  window.isClimbing = false; window.isPreparingClimb = false;
+  window.isClimbing = false; window.isPreparingClimb = false; window.isHovered = false;
   let hasReachedSummit = false, climbProgress = 0;
   let currentX = window.innerWidth * 0.9, currentY = window.innerHeight * 0.8;
   let targetX = currentX, targetY = currentY, mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
   let isAttracted = false, flip = 1;
 
   if (turtleImg && speechEl) {
+    turtleImg.addEventListener('mouseenter', () => {
+      const scrollY = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      if (scrollY < (maxScroll - 800) && scrollY >= 200 && !window.isClimbing && !window.isPreparingClimb) {
+        window.isHovered = true;
+        speechEl.innerHTML = "<a href='https://www.pusjapan.org/' target='_blank' style='text-decoration: underline; color: inherit; pointer-events: auto; display: block;'><span class='ja'>寄付する！</span><span class='en'>DONATE!</span></a>";
+        speechEl.style.pointerEvents = 'auto';
+        speechEl.classList.add('show');
+      }
+    });
+
+    turtleImg.addEventListener('mouseleave', (e) => {
+      if (e.relatedTarget === speechEl || speechEl.contains(e.relatedTarget)) return;
+      endHover();
+    });
+
+    speechEl.addEventListener('mouseleave', (e) => {
+      if (e.relatedTarget === turtleImg) return;
+      endHover();
+    });
+
+    function endHover() {
+      window.isHovered = false;
+      speechEl.style.pointerEvents = "none";
+      if (!window.isClimbing && !window.isPreparingClimb) {
+        speechEl.classList.remove('show');
+      }
+    }
+
     turtleImg.addEventListener('click', (e) => {
       e.preventDefault();
       if (window.isClimbing || window.isPreparingClimb) return;
@@ -554,7 +609,8 @@
         const missionEl = document.getElementById('mission');
         if (missionEl) window.scrollTo({ top: missionEl.offsetTop - 70, behavior: 'auto' });
       } else if (scrollY >= (maxScroll - 800)) {
-        window.isPreparingClimb = true; isAttracted = false; hasReachedSummit = false;
+        window.isPreparingClimb = true; isAttracted = false; hasReachedSummit = false; window.isHovered = false;
+        speechEl.style.pointerEvents = "none";
         speechEl.classList.remove('show');
         document.body.classList.add('cinema-mode');
         const flipWrap = document.getElementById('turtleFlipWrap');
@@ -632,7 +688,7 @@
     animateTurtle();
 
     setInterval(() => {
-      if (!window.isClimbing && !window.isPreparingClimb) {
+      if (!window.isClimbing && !window.isPreparingClimb && !window.isHovered) {
         speechEl.classList.remove('show');
         setTimeout(() => {
           const hints = sectionHints[activeSection] || sectionHints['hero'];
@@ -658,7 +714,7 @@
       const speech = document.getElementById('turtleSpeech');
       if(wrap) { wrap.style.opacity = '1'; wrap.style.transition = 'none'; }
       if(speech) speech.classList.remove('show');
-      window.isClimbing = false; window.isPreparingClimb = false;
+      window.isClimbing = false; window.isPreparingClimb = false; window.isHovered = false;
     }
   });
 </script>
