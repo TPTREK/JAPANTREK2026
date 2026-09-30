@@ -185,9 +185,10 @@
     .mission-text p, .event-text p { margin-bottom: 1rem; }
     .eventGrid { display: grid; gap: 2rem; margin-top: 2rem; }
     @media (min-width: 900px) { .eventGrid { grid-template-columns: 1fr 1fr; } }
-    .eventCol ul.standard-list { list-style: none; margin-bottom: 1.5rem; }
-    .eventCol ul.standard-list li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
-    .eventCol ul.standard-list li::before { content: ">"; color: var(--accent); position: absolute; left: 0; font-size: 0.9rem; top: 1px; font-weight: 800; }
+    ul.standard-list { list-style: none; margin-bottom: 1.5rem; }
+    ul.standard-list li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+    ul.standard-list li::before { content: ">"; color: var(--accent); position: absolute; left: 0; font-size: 0.9rem; top: 1px; font-weight: 800; }
+    
     #meetMap { width: 100%; height: 300px; border-radius: var(--r); z-index: 1; border: 2px solid var(--border); }
     [data-theme="vaporwave"] #meetMap { filter: invert(1) hue-rotate(180deg) contrast(1.2); }
     #weatherCard { background: var(--bg); border-radius: var(--r); padding: 1.5rem; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; border: 1px solid var(--border); }
@@ -434,6 +435,12 @@
               <p><span class="en"><strong>Gear:</strong> Walking sticks are not required, but highly recommended for inclines.</span><span class="ja"><strong>装備:</strong> トレッキングポールは必須ではありませんが、あると便利です。</span></p>
             </div>
           </div>
+          <div class="guide-item">
+            <div class="guide-icon">📱</div>
+            <div class="guide-text">
+              <p><span class="en"><strong>Navigation:</strong> Download trail maps offline. Cell service can drop in the mountains.</span><span class="ja"><strong>ナビゲーション:</strong> オフラインで地図を保存しましょう。山奥では電波が途切れることがあります。</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -447,7 +454,12 @@
       <div>
         <span class="badge"><span class="en">Donate</span><span class="ja">寄付</span></span>
         <h3 class="headline" style="font-size: 1.5rem;"><span class="en">Direct Contribution</span><span class="ja">直接寄付</span></h3>
-        <p><span class="en">Working together as a company to support P.U.S. JAPAN embodies everything we value. Standing shoulder to shoulder to empower these kids is genuinely awesome, turning our shared momentum into real, lasting change for education.</span><span class="ja">P.U.S. JAPANを支援するための企業としての団結は、私たちが大切にするすべての価値観を体現しています。子供たちをエンパワーするために共に立ち上がることは本当に素晴らしく、私たちの歩みを教育のための本物の変化へと変えてくれます。</span></p>
+        <p style="margin-bottom: 1rem;"><span class="en">Working together as a company to support P.U.S. JAPAN embodies everything we value. Standing shoulder to shoulder to empower these kids is genuinely awesome, turning our shared momentum into real, lasting change for education.</span><span class="ja">P.U.S. JAPANを支援するための企業としての団結は、私たちが大切にするすべての価値観を体現しています。子供たちをエンパワーするために共に立ち上がることは本当に素晴らしく、私たちの歩みを教育のための本物の変化へと変えてくれます。</span></p>
+        <ul class="standard-list" style="margin-bottom: 0;">
+          <li><span class="en"><strong>Infrastructure:</strong> Since 1985, they have funded and constructed 47 schools across Bangladesh, Nepal, and Myanmar.</span><span class="ja"><strong>学校建設:</strong> 1985年の設立以来、バングラデシュ、ネパール、ミャンマーに47校の学校を建設しています。</span></li>
+          <li><span class="en"><strong>Sponsorship:</strong> A foster-parent style scholarship. For roughly 2,000 JPY per month, donors fund schooling, supplies, and uniforms for a rural child.</span><span class="ja"><strong>里親制度:</strong> 月額約2,000円で、農村部の子供1人の学費や学用品、制服代を支援する奨学金制度です。</span></li>
+          <li><span class="en"><strong>Disaster Relief:</strong> They consistently coordinate rapid, hands-on relief efforts following major earthquakes in Japan.</span><span class="ja"><strong>災害支援:</strong> 国内の大規模地震の際には、迅速な実践的支援活動を継続的に行っています。</span></li>
+        </ul>
       </div>
       <a class="btn btnWide" style="margin-top: 1.5rem;" href="https://www.pusjapan.org/" target="_blank"><span class="en">Donate to P.U.S. Japan</span><span class="ja">P.U.S. JAPANに寄付する</span></a>
     </div>
