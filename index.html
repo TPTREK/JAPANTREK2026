@@ -284,17 +284,17 @@
       <a href="#event" class="btn"><span class="en">Get Details</span><span class="ja">詳細を見る</span></a>
     </div>
   </div>
-  <!-- Splash Intro Screen Mountains (Perfectly Symmetrical & Sharp) -->
+  <!-- Splash Intro Screen Mountains (Tall, narrow, leaning outwards, highly symmetrical) -->
   <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: -2px; left: 0; pointer-events: none; z-index: 3;">
     <g>
-      <polygon points="-50,400 250,-100 550,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <polygon points="100,400 250,-100 250,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
-      <line x1="250" y1="-100" x2="250" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="-20,400 90,-600 240,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="140,400 90,-600 240,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="140" y1="400" x2="90" y2="-600" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
     <g>
-      <polygon points="890,400 1190,-100 1490,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <polygon points="1190,400 1190,-100 1340,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
-      <line x1="1190" y1="-100" x2="1190" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="1200,400 1350,-600 1460,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="1200,400 1350,-600 1300,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="1300" y1="400" x2="1350" y2="-600" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
   </svg>
 </header>
@@ -407,14 +407,14 @@
 <div style="position: relative; width: 100%; height: 0; pointer-events: none; z-index: 3;">
   <svg class="footer-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: 0; left: 0; width: 100vw; height: 25vh;">
     <g>
-      <polygon points="-50,400 250,-100 550,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <polygon points="100,400 250,-100 250,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
-      <line x1="250" y1="-100" x2="250" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="-20,400 90,-600 240,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="140,400 90,-600 240,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="140" y1="400" x2="90" y2="-600" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
     <g>
-      <polygon points="890,400 1190,-100 1490,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
-      <polygon points="1190,400 1190,-100 1340,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
-      <line x1="1190" y1="-100" x2="1190" y2="400" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <polygon points="1200,400 1350,-600 1460,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
+      <polygon points="1200,400 1350,-600 1300,400" fill="none" stroke="var(--mountain-wire)" stroke-width="1.5"/>
+      <line x1="1300" y1="400" x2="1350" y2="-600" stroke="var(--mountain-wire)" stroke-width="1.5"/>
     </g>
   </svg>
 </div>
@@ -449,7 +449,7 @@
       if(themeToggleMob) themeToggleMob.innerHTML = '🌙';
     } else {
       document.documentElement.setAttribute('data-theme', 'vaporwave');
-      if(themeToggle) themeToggle.textContent = '☀️️';
+      if(themeToggle) themeToggle.textContent = '☀';
       if(themeToggleMob) themeToggleMob.innerHTML = '☀️';
     }
   }
@@ -520,7 +520,7 @@
         if(entry.target.id !== activeSection && sectionHints[entry.target.id]) {
            activeSection = entry.target.id;
            hintIndex = 0; 
-           if (!window.isClimbing && !window.isPreparingClimb && !window.isHovered) {
+           if (!window.isClimbing && !window.isPreparingClimb) {
              const speechEl = document.getElementById('turtleSpeech');
              if(speechEl) { speechEl.innerHTML = sectionHints[activeSection][0]; speechEl.classList.add('show'); }
            }
