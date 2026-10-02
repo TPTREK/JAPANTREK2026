@@ -107,7 +107,9 @@
     [data-theme="vaporwave"] .text-glow { text-shadow: 0 0 12px rgba(255, 113, 206, 0.8), 0 0 20px rgba(1, 205, 254, 0.5); }
     [data-theme="vaporwave"] .text-glow::before { background: radial-gradient(ellipse at center, rgba(1, 205, 254, 0.15) 0%, rgba(1, 205, 254, 0) 70%); }
     .card { position: relative; background: var(--card-bg); border-radius: var(--r); padding: clamp(1.5rem, 3vw, 2.5rem); box-shadow: var(--shadow); border: 1px solid var(--border); backdrop-filter: blur(14px); }
-    .charity-banner { border: none !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important; transition: filter 0.5s ease; }
+    
+    /* Day mode orange filter for the banner, overrides to original vaporwave in night mode */
+    .charity-banner { border: none !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important; transition: filter 0.5s ease; filter: brightness(0) saturate(100%) invert(58%) sepia(35%) saturate(927%) hue-rotate(339deg) brightness(92%) contrast(89%); }
     [data-theme="vaporwave"] .charity-banner { filter: brightness(0) saturate(100%) invert(64%) sepia(61%) saturate(5185%) hue-rotate(293deg) brightness(101%) contrast(106%) drop-shadow(0 0 15px rgba(255, 113, 206, 0.8)); }
 
     /* CSS Pure Neon Compass */
@@ -365,7 +367,6 @@
       <a href="#event" class="btn"><span class="en">Get Details</span><span class="ja">詳細を見る</span></a>
     </div>
   </div>
-  <!-- Splash Intro Screen Mountains pushed out symmetrically to frame the content safely -->
   <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: -2px; left: 0; pointer-events: none; z-index: 3;">
     <g>
       <polygon points="-80,400 40,-600 200,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
@@ -405,8 +406,9 @@
           <li><span class="en"><strong>Sponsorship:</strong> A foster-parent style scholarship. For roughly 2,000 JPY per month, donors fund schooling, supplies, and uniforms for a rural child.</span><span class="ja"><strong>里親制度:</strong> 月額約2,000円で、農村部の子供1人の学費や学用品、制服代を支援する奨学金制度です。</span></li>
           <li><span class="en"><strong>Disaster Relief:</strong> They consistently coordinate rapid, hands-on relief efforts following major earthquakes in Japan.</span><span class="ja"><strong>災害支援:</strong> 国内の大規模地震の際には、迅速な実践的支援活動を継続的に行っています。</span></li>
         </ul>
+        <p class="subtle" style="font-size: 0.85rem; margin-top: 1rem;"><span class="en">* Please select the correct amount you would like to donate.</span><span class="ja">* 寄付する正しい金額を選択してください。</span></p>
       </div>
-      <a class="btn btnWide" style="margin-top: 1.5rem;" href="https://www.pusjapan.org/" target="_blank"><span class="en">Donate to P.U.S. Japan</span><span class="ja">P.U.S. JAPANに寄付する</span></a>
+      <a class="btn btnWide" style="margin-top: 1.5rem;" href="https://buy.stripe.com/14AdR12QR83AaHEfkAbbG07" target="_blank"><span class="en">Donate to P.U.S. Japan</span><span class="ja">P.U.S. JAPANに寄付する</span></a>
     </div>
     <div class="card giveCard">
       <div>
@@ -433,7 +435,7 @@
       <ul class="standard-list">
         <li><span class="en"><strong>Meeting Time:</strong> 10:00 AM</span><span class="ja"><strong>集合時間:</strong> 午前10:00</span></li>
         <li><span class="en"><strong>Start Time:</strong> 10:30 AM</span><span class="ja"><strong>出発時間:</strong> 午前10:30</span></li>
-        <li><span class="en"><strong>Meeting Point:</strong> Hanno Station (North Exit)</span><span class="ja"><strong>集合場所:</strong> 飯能駅 (北口)、吉野家 飯能駅前店 付近</span></li>
+        <li><span class="en"><strong>Meeting Point:</strong> Hanno Station (North Exit)</span><span class="ja"><strong>集合場所:</strong> 飯能駅 (北口)</span></li>
         <li><span class="en"><strong>Fee:</strong> 3,000 JPY (Includes T-shirt, Kids are free)</span><span class="ja"><strong>参加費:</strong> 3,000円 (Tシャツ込み、子供は無料)</span></li>
       </ul>
       <div id="weatherCard">
@@ -447,6 +449,28 @@
     <div class="eventCol" style="display: flex; flex-direction: column; height: 100%;">
       <div id="meetMap" style="flex-grow: 1; min-height: 250px;"></div>
       <a class="btn btnWide" style="margin-top: 1.5rem; flex-shrink: 0;" href="https://www.google.com/maps/search/?api=1&query=Hanno+Station" target="_blank"><span class="en">Open in Google Maps</span><span class="ja">Googleマップで開く</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- =============== AFTER PARTY =============== -->
+<section id="afterparty" class="section shell card" style="margin-top: 3rem;">
+  <span class="badge"><span class="en">After Party</span><span class="ja">打ち上げ</span></span>
+  <h2 class="headline"><span class="en">Post-Hike Gathering</span><span class="ja">ハイキング後の打ち上げ</span></h2>
+  <div class="eventGrid" style="margin-top: 1rem;">
+    <div class="eventCol">
+      <ul class="standard-list">
+        <li><span class="en"><strong>Location:</strong> <a href="https://maps.app.goo.gl/KZkDc2CsQu5zsYh88" target="_blank" style="text-decoration: underline; color: var(--accent);">Tokujuan Hanno</a></span><span class="ja"><strong>場所:</strong> <a href="https://maps.app.goo.gl/KZkDc2CsQu5zsYh88" target="_blank" style="text-decoration: underline; color: var(--accent);">徳樹庵 飯能店</a></span></li>
+        <li><span class="en"><strong>Time:</strong> TBC</span><span class="ja"><strong>時間:</strong> 未定</span></li>
+        <li><span class="en"><strong>Fees:</strong> Covered for TPT employees. Non-employees: 4,500 JPY/adult, 2,200 JPY/kid (Collected on the event day).</span><span class="ja"><strong>参加費:</strong> トランスパーフェクト社員は会社負担。その他の方：大人4,500円、子供2,200円（当日集金）</span></li>
+      </ul>
+    </div>
+    <div class="eventCol">
+      <ul class="standard-list">
+        <li><span class="en"><strong>Shuttle Bus:</strong> First come first serve basis (Available for up to 25 people).</span><span class="ja"><strong>送迎バス:</strong> 先着順（定員25名）</span></li>
+        <li><span class="en"><strong>Pickup Location:</strong> Finish of the trail (TBC)</span><span class="ja"><strong>乗車場所:</strong> トレイルのゴール地点（未定）</span></li>
+        <li><span class="en"><strong>Pickup Time:</strong> TBC</span><span class="ja"><strong>乗車時間:</strong> 未定</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -757,7 +781,7 @@
       const maxScroll = document.body.scrollHeight - window.innerHeight;
       if (scrollY < (maxScroll - 800) && scrollY >= 200 && !window.isClimbing && !window.isPreparingClimb) {
         window.isHovered = true;
-        speechEl.innerHTML = "<a href='https://www.pusjapan.org/' target='_blank' style='text-decoration: underline; color: inherit; pointer-events: auto; display: block;'><span class='ja'>寄付する！</span><span class='en'>DONATE!</span></a>";
+        speechEl.innerHTML = "<a href='https://buy.stripe.com/14AdR12QR83AaHEfkAbbG07' target='_blank' style='text-decoration: underline; color: inherit; pointer-events: auto; display: block;'><span class='ja'>寄付する！</span><span class='en'>DONATE!</span></a>";
         speechEl.style.pointerEvents = 'auto';
         speechEl.classList.add('show');
       }
@@ -823,7 +847,7 @@
           window.isPreparingClimb = false; window.isClimbing = true; climbProgress = 0;
         }, 600);
       } else {
-        window.location.href = "https://www.pusjapan.org/";
+        window.location.href = "https://buy.stripe.com/14AdR12QR83AaHEfkAbbG07";
       }
     });
 
@@ -855,7 +879,7 @@
               turtleWrap.style.transition = 'opacity 1s ease'; turtleWrap.style.opacity = '0';
               setTimeout(() => {
                 document.body.classList.remove('cinema-mode');
-                window.location.href = "https://www.pusjapan.org/";
+                window.location.href = "https://buy.stripe.com/14AdR12QR83AaHEfkAbbG07";
               }, 1000);
             }, 2000); 
           }
