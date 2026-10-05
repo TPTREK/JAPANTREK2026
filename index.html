@@ -367,6 +367,7 @@
       <a href="#event" class="btn"><span class="en">Get Details</span><span class="ja">詳細を見る</span></a>
     </div>
   </div>
+  <!-- Splash Intro Screen Mountains pushed out symmetrically to frame the content safely -->
   <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; bottom: -2px; left: 0; pointer-events: none; z-index: 3;">
     <g>
       <polygon points="-80,400 40,-600 200,400" fill="var(--bg)" stroke="var(--mountain-wire)" stroke-width="3"/>
@@ -433,9 +434,9 @@
       <p><span class="en">A scenic climb linking Mount Tenran and Mount Tonosu. The path offers switchback forest tracks, natural viewpoints over Hanno, and an accessible ascent suitable for beginners and experienced walkers alike.</span><span class="ja">天覧山と多峯主山を結ぶ絶景のコース。つづら折りの林道、飯能を見渡す自然の展望台があり、初心者から経験者まで楽しめる登りやすいルートです。</span></p>
       <br><h3><span class="en">Schedule - Saturday, November 7th</span><span class="ja">スケジュール - 11月7日(土)</span></h3>
       <ul class="standard-list">
-        <li><span class="en"><strong>Meeting Time:</strong> 10:00 AM</span><span class="ja"><strong>集合時間:</strong> 午前10:00</span></li>
-        <li><span class="en"><strong>Start Time:</strong> 10:30 AM</span><span class="ja"><strong>出発時間:</strong> 午前10:30</span></li>
-        <li><span class="en"><strong>Meeting Point:</strong> Hanno Station (North Exit), near Yoshinoya Hanno Ekimae Branch</span><span class="ja"><strong>集合場所:</strong> 飯能駅 (北口)、吉野家 飯能駅前店 付近</span></li>
+        <li><span class="en"><strong>Meeting Time:</strong> 9:30 AM</span><span class="ja"><strong>集合時間:</strong> 午前9:30</span></li>
+        <li><span class="en"><strong>Start Time:</strong> 10:00 AM</span><span class="ja"><strong>出発時間:</strong> 午前10:00</span></li>
+        <li><span class="en"><strong>Meeting Point:</strong> Hanno Station (North Exit)</span><span class="ja"><strong>集合場所:</strong> 飯能駅 (北口)</span></li>
         <li><span class="en"><strong>Fee:</strong> 3,000 JPY (Includes T-shirt, Kids are free)</span><span class="ja"><strong>参加費:</strong> 3,000円 (Tシャツ込み、子供は無料)</span></li>
       </ul>
       <div id="weatherCard">
@@ -461,15 +462,15 @@
     <div class="eventCol">
       <ul class="standard-list">
         <li><span class="en"><strong>Location:</strong> <a href="https://maps.app.goo.gl/KZkDc2CsQu5zsYh88" target="_blank" style="text-decoration: underline; color: var(--accent);">Tokujuan Hanno</a></span><span class="ja"><strong>場所:</strong> <a href="https://maps.app.goo.gl/KZkDc2CsQu5zsYh88" target="_blank" style="text-decoration: underline; color: var(--accent);">徳樹庵 飯能店</a></span></li>
-        <li><span class="en"><strong>Time:</strong> TBC</span><span class="ja"><strong>時間:</strong> 未定</span></li>
+        <li><span class="en"><strong>Time:</strong> 1:30 PM</span><span class="ja"><strong>時間:</strong> 午後1:30</span></li>
         <li><span class="en"><strong>Fees:</strong> Covered for TPT employees. Non-employees: 4,500 JPY/adult, 2,200 JPY/kid (Collected on the event day).</span><span class="ja"><strong>参加費:</strong> トランスパーフェクト社員は会社負担。その他の方：大人4,500円、子供2,200円（当日集金）</span></li>
       </ul>
     </div>
     <div class="eventCol">
       <ul class="standard-list">
         <li><span class="en"><strong>Shuttle Bus:</strong> First come first serve basis (Available for up to 25 people).</span><span class="ja"><strong>送迎バス:</strong> 先着順（定員25名）</span></li>
-        <li><span class="en"><strong>Pickup Location:</strong> Finish of the trail (TBC)</span><span class="ja"><strong>乗車場所:</strong> トレイルのゴール地点（未定）</span></li>
-        <li><span class="en"><strong>Pickup Time:</strong> TBC</span><span class="ja"><strong>乗車時間:</strong> 未定</span></li>
+        <li><span class="en"><strong>Pickup Location:</strong> Nagata Osugi Bus Stop</span><span class="ja"><strong>乗車場所:</strong> 永田大杉 (バス停)</span></li>
+        <li><span class="en"><strong>Pickup Time:</strong> 1:00 PM</span><span class="ja"><strong>乗車時間:</strong> 午後1:00</span></li>
       </ul>
     </div>
   </div>
@@ -723,7 +724,7 @@
       document.getElementById('wxDescDisplay').innerHTML = `<span class="en">Weather offline</span><span class="ja">天気情報オフライン</span>`;
     });
 
-  const cdDate = new Date("November 7, 2026 10:00:00").getTime();
+  const cdDate = new Date("November 7, 2026 09:30:00").getTime();
   setInterval(() => {
     const now = new Date().getTime();
     const dist = cdDate - now;
